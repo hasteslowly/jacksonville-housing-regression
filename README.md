@@ -39,6 +39,60 @@ Two variables were excluded before modeling. `YearConst` is a perfect linear fun
 
 **Worked example:** A home with average size (1,957 sq ft) and age (about 31 years), not a townhouse and without a pool, has an estimated mean sale price of about $161,600 (95% CI $156,444 to $166,715). The 95% prediction interval for a single such home is wider, $114,562 to $208,597.
 
+## Selected figures
+
+### Exploratory analysis
+
+![Histogram and boxplot of sale price](figures/fig01-02_saleprice_histogram_boxplot.png)
+
+![Boxplots of continuous predictors](figures/fig03_predictor_boxplots.png)
+
+![Sale price by townhouse status and pool](figures/fig04_price_by_townhouse_pool.png)
+
+![Pairwise scatterplots of continuous variables](figures/fig05_pairs_plot.png)
+
+### Full-model diagnostics
+
+Two extreme positive residuals (rows 103 and 104) stand out in the residual plot, and row 104 has a very large Cook's distance.
+
+![Residuals vs fitted, full model](figures/fig06_residuals_vs_fitted_full_model.png)
+
+![Normal Q-Q plot, full model](figures/fig07_qq_plot_full_model.png)
+
+![Cook's distance, full model](figures/fig09_cooks_distance_full_model.png)
+
+### After removing rows 103 and 104
+
+![Residuals vs fitted after removal](figures/fig10_residuals_vs_fitted_after_removal.png)
+
+![Normal Q-Q plot after removal](figures/fig11_qq_plot_after_removal.png)
+
+![Histogram of residuals after removal](figures/fig12_residual_histogram_after_removal.png)
+
+![Cook's distance after removal](figures/fig13_cooks_distance_after_removal.png)
+
+### Model selection
+
+![AIC values at each stepwise step](figures/table2_aic_stepwise_selection.png)
+
+![Interaction search results](figures/table3_interaction_search.png)
+
+![VIFs before and after model selection](figures/table4_vif_before_after.png)
+
+### Final model diagnostics
+
+![Residuals vs fitted, final model](figures/fig14_residuals_vs_fitted_final_model.png)
+
+![Residuals vs each predictor, final model](figures/fig15_residuals_vs_each_predictor_final.png)
+
+![Normal Q-Q plot, final model](figures/fig16_qq_plot_final_model.png)
+
+![Cook's distance, final model](figures/fig17_cooks_distance_final_model.png)
+
+### Final coefficient table
+
+![Coefficient estimates for the final model](figures/table1_final_model_coefficients.png)
+
 ## Key findings
 
 - Size matters most: each additional gross square foot is associated with about $59 more in sale price, holding the other variables constant.
@@ -59,7 +113,9 @@ Two variables were excluded before modeling. `YearConst` is a perfect linear fun
 | File | Description |
 |---|---|
 | `housing_regression.R` | Full analysis script: exploration, diagnostics, model selection, final model, and predictions |
-| `OdutolaOdunayoSamson_FinalProject.docx` | Written report with figures and interpretation |
+| `OdutolaOdunayoSamson_FinalProject.pdf` | Written report with all figures and interpretation (viewable directly on GitHub) |
+| `OdutolaOdunayoSamson_FinalProject.docx` | Same report in Word format |
+| `figures/` | Figures and tables from the report, shown above |
 
 ## How to run
 
